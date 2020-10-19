@@ -1,0 +1,767 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+$background-color: rgb(229, 230, 219);
+
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@200;300&display=swap");
+
+body {
+  background-color: $background-color;
+  font-family: "Commissioner", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: 30px;
+  width: 100%;
+  position: relative;
+  left: -5px;
+  color: #333;
+}
+
+// top of the tower
+
+.top-tower {
+  .cross {
+    position: absolute;
+    bottom: 20px;
+    z-index: 25;
+
+    .ver-line {
+      width: 1px;
+      height: 14px;
+      position: absolute;
+      left: 1px;
+      bottom: 4px;
+      background: #644042;
+    }
+
+    .hor-line {
+      width: 5px;
+      height: 1px;
+      left: -1px;
+      position: absolute;
+      bottom: 14px;
+      background: #644042;
+    }
+
+    .base {
+      width: 3px;
+      height: 4px;
+      background: #c8a384;
+    }
+  }
+
+  .frame-window {
+    background: #ad836b;
+    display: inline-block;
+    height: 8px;
+    position: relative;
+    width: 5px;
+    z-index: 30;
+
+    &:before {
+      border-bottom: 5px solid #ad836b;
+      border-left: 2.5px solid transparent;
+      border-right: 2.5px solid transparent;
+      content: "";
+      height: 0;
+      left: 0;
+      position: absolute;
+      top: -5px;
+      width: 0;
+    }
+
+    .window {
+      background: #082f47;
+      display: inline-block;
+      height: 6px;
+      position: relative;
+      width: 3px;
+      top: -10px;
+      left: 1px;
+      z-index: 30;
+
+      &:before {
+        border-bottom: 3px solid #082f47;
+        border-left: 1.5px solid transparent;
+        border-right: 1.5px solid transparent;
+        content: "";
+        height: 0;
+        left: 0;
+        position: absolute;
+        top: -3px;
+        width: 0;
+      }
+    }
+  }
+
+  .top-area {
+    position: absolute;
+    width: 42px;
+    height: 60px;
+    left: 0px;
+    top: -60px;
+    background: #435f63;
+
+    .top-antenna {
+      position: absolute;
+      bottom: 53px;
+      left: 20.5px;
+      width: 1px;
+      height: 30px;
+      background: #644042;
+      z-index: 50;
+
+      .circle {
+        position: relative;
+        left: -1px;
+        width: 3px;
+        height: 3px;
+        border-radius: 3px;
+        background: #644042;
+      }
+    }
+
+    .left-top-cross {
+      left: -0px;
+      bottom: 0px;
+      .base {
+        height: 8px;
+      }
+      .ver-line {
+        bottom: 8px;
+      }
+      .hor-line {
+        bottom: 18px;
+      }
+    }
+
+    .right-top-cross {
+      left: 39px;
+      bottom: 0px;
+      .base {
+        height: 8px;
+      }
+      .ver-line {
+        bottom: 8px;
+      }
+      .hor-line {
+        bottom: 18px;
+      }
+    }
+
+    // changing windows to be smaller
+
+    .frame-window {
+      height: 6px;
+      width: 5px;
+
+      .window {
+        height: 4px;
+        width: 3px;
+        top: -12px;
+        left: 1px;
+      }
+    }
+
+    .div-lower-windows {
+      position: absolute;
+      top: 52px;
+      left: 9px;
+      width: 24px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .div-mid-windows {
+      position: absolute;
+      top: 40px;
+      left: 14px;
+      width: 14px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .div-top-windows {
+      position: absolute;
+      top: 28px;
+      left: 18.5px;
+      width: 24px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .top-area-sunny {
+      position: absolute;
+      width: 21px;
+      height: 60px;
+      background: #4b6f75;
+      z-index: 5;
+    }
+
+    .top-area-oval-right {
+      position: absolute;
+      left: -3px;
+      bottom: 17px;
+      width: 100px;
+      transform: rotate(71deg);
+      height: 40px;
+      background: $background-color;
+      border-radius: 100px / 50px;
+      z-index: 20;
+    }
+
+    .top-area-oval-left {
+      position: absolute;
+      left: -55px;
+      bottom: 17px;
+      width: 100px;
+      transform: rotate(-71deg);
+      height: 40px;
+      background: $background-color;
+      border-radius: 100px / 50px;
+      z-index: 20;
+    }
+  }
+
+  .high-area {
+    position: relative;
+    width: 42px;
+    height: 18px;
+    left: 29px;
+    background: #936d5a;
+
+    .left-bottom-cross {
+      left: -7px;
+      bottom: 0px;
+    }
+
+    .right-bottom-cross {
+      left: 100px;
+      bottom: 0px;
+    }
+
+    .horizontal-border {
+      position: relative;
+      width: 50px;
+      height: 3px;
+      left: -4px;
+      top: 15px;
+      border-radius: 1px;
+      background: #644042;
+      z-index: 40;
+    }
+
+    .high-area-sunny {
+      position: absolute;
+      width: 21px;
+      height: 18px;
+      background: #ad836b;
+      z-index: 5;
+    }
+
+    .vertical-div {
+      position: absolute;
+      top: 4px;
+      width: 80%;
+      left: 4px;
+      height: 16px;
+      display: flex;
+      justify-content: space-around;
+      z-index: 15;
+
+      .vertical-line {
+        width: 3px;
+        height: 12px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        background: #644042;
+      }
+    }
+  }
+
+  .mid-area {
+    position: relative;
+    width: 96px;
+    height: 40px;
+    left: 2px;
+    background: #435f63;
+
+    .mid-area-sunny {
+      position: absolute;
+      width: 48px;
+      height: 40px;
+      background: #4b6f75;
+      z-index: 5;
+    }
+
+    .left-bottom-cross {
+      left: -0px;
+      bottom: 0px;
+      .base {
+        height: 8px;
+      }
+      .ver-line {
+        bottom: 8px;
+      }
+      .hor-line {
+        bottom: 18px;
+      }
+    }
+
+    .right-bottom-cross {
+      left: 93px;
+      bottom: 0px;
+      .base {
+        height: 8px;
+      }
+      .ver-line {
+        bottom: 8px;
+      }
+      .hor-line {
+        bottom: 18px;
+      }
+    }
+
+    .div-higher-windows {
+      position: absolute;
+      top: 12px;
+      left: 31px;
+      width: 34px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .div-lower-windows {
+      position: absolute;
+      top: 28px;
+      left: 22px;
+      width: 50px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .mid-area-oval-right {
+      position: absolute;
+      left: 73px;
+      bottom: -10px;
+      width: 100px;
+      transform: rotate(40deg);
+      height: 80px;
+      background: $background-color;
+      border-radius: 100px / 50px;
+      z-index: 20;
+    }
+
+    .mid-area-oval-left {
+      position: absolute;
+      left: -77px;
+      bottom: -10px;
+      width: 100px;
+      transform: rotate(-40deg);
+      height: 80px;
+      background: $background-color;
+      border-radius: 100px / 50px;
+      z-index: 20;
+    }
+  }
+
+  .lower-area {
+    position: relative;
+    width: 96px;
+    height: 18px;
+    left: 2px;
+    background: #936d5a;
+
+    .left-bottom-cross {
+      left: -7px;
+      bottom: 0px;
+    }
+
+    .right-bottom-cross {
+      left: 100px;
+      bottom: 0px;
+    }
+
+    .lower-area-sunny {
+      position: absolute;
+      width: 48px;
+      height: 18px;
+      background: #ad836b;
+      z-index: 5;
+    }
+
+    .vertical-div {
+      position: absolute;
+      top: 4px;
+      width: 70%;
+      margin-left: 15px;
+      height: 18px;
+      display: flex;
+      justify-content: space-around;
+      z-index: 15;
+
+      .vertical-line {
+        width: 4px;
+        height: 14px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        background: #644042;
+      }
+    }
+  }
+}
+
+// clock area
+
+.clock-area {
+  .clock {
+    position: relative;
+    left: -5px;
+    width: 110px;
+    height: 86px;
+    background: #c8a384;
+
+    .horizontal-border {
+      position: relative;
+      width: 114px;
+      height: 3px;
+      left: -2px;
+      top: 7px;
+      border-radius: 1px;
+      background: #644042;
+    }
+
+    .clock-shield {
+      position: absolute;
+      top: 10px;
+      left: 17px;
+      width: 70px;
+      height: 70px;
+      border: 3px solid #d7c298;
+
+      .white-shield {
+        position: absolute;
+        width: 56px;
+        height: 56px;
+        background: white;
+        border-radius: 50%;
+        left: 7px;
+        bottom: 7px;
+        border: 0.5px solid #644042;
+
+        .hands-of-the-clock {
+          position: relative;
+          width: 56px;
+          height: 56px;
+
+          @keyframes rotate {
+            100% {
+              transform: rotateZ(360deg);
+            }
+          }
+
+          .circle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 2px;
+            left: 27px;
+            top: 27px;
+            background: #644042;
+            z-index: 20;
+          }
+
+          .hours {
+            background: #644042;
+            height: 20%;
+            left: 48.75%;
+            position: absolute;
+            top: 30%;
+            transform-origin: 50% 100%;
+            width: 2.5%;
+            animation: rotate 72s infinite linear;
+          }
+
+          .minutes {
+            background: #644042;
+            height: 40%;
+            left: 49%;
+            position: absolute;
+            top: 10%;
+            transform-origin: 50% 100%;
+            width: 2%;
+            animation: rotate 6s infinite linear;
+          }
+        }
+
+        .clock-pointers {
+          position: absolute;
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+
+          .pointer {
+            position: absolute;
+            left: calc(50% - 0.5px);
+            top: 0;
+            width: 0.5px;
+            height: 100%;
+            background: #644042;
+          }
+
+          .n0 {
+            transform: rotate(0deg);
+          }
+          .n1 {
+            transform: rotate(30deg);
+          }
+          .n2 {
+            transform: rotate(60deg);
+          }
+          .n3 {
+            transform: rotate(90deg);
+          }
+          .n4 {
+            transform: rotate(120deg);
+          }
+          .n5 {
+            transform: rotate(150deg);
+          }
+        }
+
+        .middle-circle {
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          left: 2.5px;
+          bottom: 2.5px;
+          border: 0.5px solid #644042;
+
+          .final-circle {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-radius: 50%;
+            left: 9.5px;
+            bottom: 9.5px;
+            border: 0.5px solid #644042;
+          }
+        }
+      }
+
+      .square-div {
+        position: relative;
+        width: 100%;
+        height: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .small-square {
+          width: 6px;
+          height: 6px;
+          background: #d7c298;
+          margin: 0 5px;
+        }
+      }
+
+      .bottom-div {
+        position: relative;
+        top: 38px;
+      }
+    }
+  }
+
+  .below-clock-area {
+    position: relative;
+    left: -5px;
+    width: 110px;
+    height: 20px;
+
+    .horizontal-border {
+      position: relative;
+      width: 114px;
+      height: 3px;
+      left: -2px;
+      border-radius: 1px;
+      background: #644042;
+    }
+
+    .horizontal-border-bottom {
+      position: absolute;
+      width: 100px;
+      height: 3px;
+      top: 18px;
+      left: 5px;
+      border-radius: 1px;
+      background: #644042;
+      z-index: 10;
+    }
+
+    .vertical-div {
+      position: absolute;
+      top: 4px;
+      width: 60%;
+      margin-left: 20%;
+      height: 20px;
+      display: flex;
+      justify-content: space-around;
+      z-index: 15;
+
+      .vertical-line {
+        width: 4px;
+        height: 12px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        background: #644042;
+      }
+    }
+
+    .below-clock-sunny {
+      position: absolute;
+      width: 100%;
+      height: 60%;
+      background: #ad836b;
+      z-index: 5;
+    }
+
+    .below-clock-dark {
+      position: absolute;
+      width: 100%;
+      height: 40%;
+      top: 60%;
+      background: #936d5a;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+
+      .triangle-bottom-left {
+        width: 0;
+        height: 0;
+        border-bottom: 10px solid $background-color;
+        border-right: 10px solid transparent;
+      }
+
+      .triangle-bottom-right {
+        width: 0;
+        height: 0;
+        border-bottom: 10px solid $background-color;
+        border-left: 10px solid transparent;
+      }
+    }
+  }
+}
+
+// middle of the tower
+
+.middle-tower {
+  position: relative;
+  left: 5px;
+  height: 260px;
+  width: 90px;
+  background: #936d5a;
+
+  .middle-tower-sunny {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: #ad836b;
+    z-index: 5;
+  }
+
+  .row-with-columns {
+    width: 100%;
+    height: 60px;
+
+    .line {
+      background: #644042;
+    }
+
+    .sunny-line {
+      background: #654041;
+    }
+
+    .vertical-div {
+      position: relative;
+      top: -6px;
+      width: 70%;
+      margin-left: 15%;
+      height: 60px;
+      display: flex;
+      justify-content: space-around;
+      z-index: 15;
+
+      .vertical-line {
+        width: 4px;
+        height: 56px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+      }
+    }
+
+    .horizontal-div {
+      position: relative;
+      top: 50px;
+      height: 10px;
+      width: 90px;
+      z-index: 10;
+      background: #936c5c;
+
+      .horizontal-line {
+        position: relative;
+        width: 94px;
+        height: 3px;
+        left: -2px;
+        border-radius: 1px;
+      }
+
+      .bottom-line {
+        margin-top: 4px;
+      }
+    }
+  }
+}
+
+// bottom of the tower
+
+.bottom-tower {
+  position: relative;
+  width: 100px;
+  height: 60px;
+  border-radius: 2px;
+  background: #6b4a41;
+  z-index: 2;
+
+  .bottom-tower-sunny {
+    width: 50%;
+    height: 100%;
+    background: #96705d;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+}
+
+.bottom-tower-shadow {
+  width: 120px;
+  position: relative;
+  height: 10px;
+  background: #d6d0d0;
+  border-radius: 10px;
+  right: 10px;
+  top: -4px;
+  z-index: 1;
+}
